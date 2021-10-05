@@ -10,6 +10,13 @@ const ItemRouter = Router();
   
   ItemRouter.
   route('/:itemCode')
-  .get(ItemController.getOneItem)  
+  .get(ItemController.getOneItem)
+
+  ItemRouter.post('/buy/:type', 
+    ItemController.buyItem
+  )
+  ItemRouter.post('/refund/:type', 
+    ItemController.refundItem
+  )
 
 export default ItemRouter;

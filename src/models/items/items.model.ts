@@ -14,7 +14,7 @@ let items: Items[] = [
     description: "Pepsi soft drink"
   },
   {
-    code: 'sd102',
+    code: 'sd103',
     name: "Dew",
     cost: 30,
     description: "Dew soft drink"

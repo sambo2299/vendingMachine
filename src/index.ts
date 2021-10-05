@@ -1,11 +1,19 @@
-import express from "express";
-import * as bodyParser from 'body-parser';
-
 import logger from "./system/logger";
 
-const app = express();
-const port = 8080;
+import express from "express";
+import * as bodyParser from 'body-parser';
+import path from 'path';
+import {renderFile} from 'ejs';
+
 import routes from './routes';
+
+const app = express();
+app.use(express.static(path.resolve(__dirname, '../client/assets')));
+app.set('views', path.resolve(__dirname, '../client/views'));
+app.engine('html', renderFile);
+app.set('view engine', 'html');
+
+const port = process.env.PORT || 8080;
 
 // bodyparser setup
 app.use(bodyParser.urlencoded({ extended: true }));
