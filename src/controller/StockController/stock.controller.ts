@@ -35,7 +35,7 @@ export const updateItemStock = async(req: any, res: any) => {
       message: 'not enough params'
     });
   }
-  const actions = ['add', 'remove'];  
+  const actions = ['add', 'remove'];
   if(actions.indexOf(req.params.actions) < 0) {
     return res.status(500).send({
       message: `action ${req.params.actions} not permitted!!!`
@@ -54,7 +54,7 @@ export const updateItemStock = async(req: any, res: any) => {
       res.status(500).send({
         message: 'internal server error!!!'
       })
-  }  
+  }
   if(!Item) {
     return res.status(500).send({
       message: 'Item not found'

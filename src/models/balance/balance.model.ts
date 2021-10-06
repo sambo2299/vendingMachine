@@ -1,6 +1,6 @@
 import {Balance} from './balance.interface';
 
-let balance: Balance = {
+const balance: Balance = {
   current_balance: 100,
   initial_balance: 100,
   last_transaction: null,

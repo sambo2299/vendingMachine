@@ -1,6 +1,6 @@
 import { Transaction } from './transaction.interface';
 
-let transactions: Transaction[] = 
+const transactions: Transaction[] =
 [
   {
     "id": new Date().getTime(),
@@ -16,7 +16,7 @@ let transactions: Transaction[] =
 
   export const getAll = async(): Promise<Transaction[]> => {
     return transactions;
-  }  
+  }
 
   export const add = async(obj: Transaction): Promise<Boolean> => {
     await transactions.push(obj);

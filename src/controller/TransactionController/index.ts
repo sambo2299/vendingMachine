@@ -6,6 +6,6 @@ const BalanceRouter = Router();
 
   BalanceRouter
   .route('/')
-  .get(TransactionController.getAllTranaction)  
+  .get(TransactionController.getAllTranaction)
 
 export default BalanceRouter;

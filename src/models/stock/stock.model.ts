@@ -1,9 +1,9 @@
 import { Stock } from './stock.interface';
 
-let stocks: Stock[] =[ 
+const stocks: Stock[] =[
   {
     item_code: 'sd101',
-    item_stock: 10    
+    item_stock: 10
   },
   {
     item_code: 'sd102',

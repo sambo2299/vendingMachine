@@ -1,7 +1,7 @@
 import * as balanceModel from "../../models/balance/balance.model";
 
 export const getBalance = async(req:any, res:any) => {
-  const balance = await balanceModel.get();  
+  const balance = await balanceModel.get();
   res.status(200).send({
     balance,
     message: 'current balance fetched'

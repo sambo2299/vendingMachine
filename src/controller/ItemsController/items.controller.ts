@@ -45,13 +45,13 @@ export const refundItem = async(req: any, res: any) => {
     return res.status(500).send({
       message: 'item not avaialble'
     })
-  }      
-  const balanceAmount = await BalanceModel.get();  
+  }
+  const balanceAmount = await BalanceModel.get();
   if(balanceAmount < item.cost) {
     return res.status(500).send({
       message: 'Balance not sufficient for refund'
     })
-  }  
+  }
   try {
     const stockOperations = await StockModel.add(itemCode);
     const balanceOperations = await BalanceModel.subtract(item.cost);
@@ -63,7 +63,7 @@ export const refundItem = async(req: any, res: any) => {
       payment_mode: req.body.payment_mode || null,
       received_amount: null,
       return_amount: item.cost,
-      remarks: `${item.name} refund`      
+      remarks: `${item.name} refund`
     };
     const transactionOperations = await TransactionModel.add(newtranaction);
     return res.status(200).send({
@@ -108,7 +108,7 @@ export const buyItem = async(req: any, res: any) => {
       message: 'Item cost is more than amount received'
     })
   }
-  const balanceAmount = await BalanceModel.get();  
+  const balanceAmount = await BalanceModel.get();
   if(balanceAmount  < (amountReceived - item.cost)) {
     return res.status(500).send({
       message: 'Balance not sufficient for returning amount'
@@ -126,7 +126,7 @@ export const buyItem = async(req: any, res: any) => {
       payment_mode: req.body.payment_mode || null,
       received_amount: amountReceived,
       return_amount: returnAmount,
-      remarks: `${item.name} buy`      
+      remarks: `${item.name} buy`
     };
     const transactionOperations = await TransactionModel.add(newtranaction);
     return res.status(200).send({

@@ -1,6 +1,6 @@
 import {Items} from './items.interface';
 
-let items: Items[] = [
+const items: Items[] = [
   {
     code: 'sd101',
     name: "Coke",

@@ -4,14 +4,16 @@ import express from "express";
 import * as bodyParser from 'body-parser';
 import path from 'path';
 import {renderFile} from 'ejs';
+import cors from 'cors';
 
 import routes from './routes';
 
 const app = express();
-app.use(express.static(path.resolve(__dirname, '../client/assets')));
-app.set('views', path.resolve(__dirname, '../client/views'));
+app.use(express.static(path.resolve(__dirname, '../client/vending-machine/build')));
+app.set('views', path.resolve(__dirname, '../client/vending-machine/build'));
 app.engine('html', renderFile);
 app.set('view engine', 'html');
+app.use(cors({origin: "*"}));
 
 const port = process.env.PORT || 8080;
 
