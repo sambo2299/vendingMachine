@@ -24,6 +24,5 @@ app.use(bodyParser.json());
 routes(app);
 
 app.listen( port, () => {
-    console.log( `server started at http://localhost:${ port }` );
     logger.info(`server started at http://localhost:${ port }`)
 } );

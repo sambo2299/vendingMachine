@@ -11,6 +11,6 @@ const StockRouter = Router();
   StockRouter.
   route('/:itemCode/:actions?')
   .get(stockController.getOneItemStock)
-  .put(stockController.updateItemStock)
+  // .put(stockController.updateItemStock)
 
 export default StockRouter;

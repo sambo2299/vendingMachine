@@ -23,6 +23,7 @@ export const getOneItem = async(req: any, res: any) => {
   const itemCode = req.params.itemCode
   const Item = await ItemModel.getOne(itemCode);
   if(!Item) {
+    logger.error('Item not found');
     return res.status(500).send({
       message: 'Item not found'
     })
@@ -68,7 +69,7 @@ export const refundItem = async(req: any, res: any) => {
     const transactionOperations = await TransactionModel.add(newtranaction);
     return res.status(200).send({
       message: `you refunded an item ${item.name}`,
-      refundedAmound: item.cost
+      refundedAmount: item.cost
     });
   }catch(ex) {
     logger.error(ex);

@@ -14,7 +14,6 @@ export const getAllStocks = async(req: any, res: any) => {
 };
 
 export const getOneItemStock = async(req: any, res: any) => {
-  console.log('get one item stock')
   const itemCode = req.params.itemCode
   const Item = await StockModel.getOne(itemCode);
   if(!Item) {
@@ -29,7 +28,6 @@ export const getOneItemStock = async(req: any, res: any) => {
 };
 
 export const updateItemStock = async(req: any, res: any) => {
-  console.log(req.params)
   if(!req.params.itemCode || !req.params.actions) {
     return res.status(500).send({
       message: 'not enough params'

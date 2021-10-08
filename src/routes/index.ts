@@ -8,7 +8,7 @@ const routes = (app: any) => {
   app.use('/api/balance', BalanceRouter)
   app.use('/api/items', ItemRouter)
   app.use('/api/stocks', StockRouter)
-  app.use('/api/transaction', TransactionRouter)
+  app.use('/api/transactions', TransactionRouter)
 
   app.get('/', (req:any, res:any) => {
     res.render('index')
