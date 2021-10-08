@@ -109,11 +109,11 @@ export const buyItem = async(req: any, res: any) => {
     })
   }
   const balanceAmount = await BalanceModel.get();
-  if(balanceAmount  < (amountReceived - item.cost)) {
-    return res.status(500).send({
-      message: 'Balance not sufficient for returning amount'
-    })
-  }
+  // if(balanceAmount  < (amountReceived - item.cost)) {
+  //   return res.status(500).send({
+  //     message: 'Balance not sufficient for returning amount'
+  //   })
+  // }
   const returnAmount = amountReceived - item.cost;
   try {
     const stockOperations = await StockModel.subtract(itemCode);

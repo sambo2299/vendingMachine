@@ -151,6 +151,7 @@ class MainContainer extends Component {
                   alt={itm.name} 
                   title={itm.name} height="80px"
                   />
+                  <span><strong>{itm.cost}</strong></span>
                 </Item>
               ))}
             </Box>

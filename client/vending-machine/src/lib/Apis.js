@@ -1,6 +1,8 @@
 import axios from 'axios';
 import qs from 'qs';
 
+console.log(process.env.REACT_APP_CONTAINER_URL)
+
 const instance = axios.create({
     baseURL: process.env.REACT_APP_CONTAINER_URL || 'http://localhost:8080',
     timeout: 1000

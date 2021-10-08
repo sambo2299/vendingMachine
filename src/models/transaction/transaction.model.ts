@@ -18,7 +18,7 @@ const transactions: Transaction[] =
     return transactions;
   }
 
-  export const add = async(obj: Transaction): Promise<Boolean> => {
+  export const add = async(obj: Transaction): Promise<boolean> => {
     await transactions.push(obj);
     return true;
   }

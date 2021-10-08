@@ -1,0 +1,12 @@
+node_modules/
+src/dist/
+client/vending-machine/build/
+client/vending-machine/node_modules/
+log/
+.git
+.gitignore
+package-lock.json
+client/vending-machine/package-lock.json
+
+
+
