@@ -24,6 +24,8 @@
 
 **open browser http://localhost:8080**
 
+**Run unit tests for server**
+  npm run test
 
 
 
